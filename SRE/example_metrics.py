@@ -27,5 +27,5 @@ print(var_7)
 var_8 = sre.set_all_metrics(year=202,month=12,downtime=1,sla=99.99,slo=99.99,sli=0,mtbf=10,mttr=60)
 print(var_8)
 
-var_9 = sre.error_budget(10)
+var_9 = sre.error_budget(99.99)
 print(var_9)

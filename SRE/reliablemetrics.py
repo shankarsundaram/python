@@ -10,11 +10,12 @@ class ReliableMetrics:
     SLA => Default = 99.99
     SLO => Default = 99.99
     """    
-    def error_budget(self, down_time=0):
+    def error_budget(self, slo=0, dec_point=3):
         """ Calculate the error budget """
-        
-        self.down_time = down_time
-        err_budget = (1- down_time)
+
+        self.slo = slo
+        self.dec_point = dec_point
+        err_budget = round(float(100-slo),dec_point)
         
         return err_budget
 
