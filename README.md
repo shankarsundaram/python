@@ -1,3 +1,3 @@
 # python
 
-SRE Metrics
+SRE Metrics class
