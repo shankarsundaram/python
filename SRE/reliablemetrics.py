@@ -10,6 +10,14 @@ class ReliableMetrics:
     SLA => Default = 99.99
     SLO => Default = 99.99
     """    
+    def error_budget(self, down_time=0):
+        """ Calculate the error budget """
+        
+        self.down_time = down_time
+        err_budget = (1- down_time)
+        
+        return err_budget
+
     def uptime(self,year=int(datetime.today().year),month=int(datetime.today().month)):
         """ Calculate uptime in minutes"""
         
