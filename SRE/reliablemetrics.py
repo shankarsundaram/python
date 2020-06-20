@@ -76,11 +76,12 @@ class ReliableMetrics:
         
         return avail_percentage
     
-    def mtbf(self,mt_bf=0):
+    def mtbf(self,up_time,failures=1,dec_point=3):
         """ Calculate mean time between failures """
         
-        self.mt_bf = mt_bf
-        
+        self.up_time = up_time
+        self.failures = failures
+        mt_bf = round(float(up_time / failures),dec_point)
         return mt_bf
     
     def mttr(self,mt_tr=0):
@@ -100,7 +101,7 @@ class ReliableMetrics:
         objective = self.slo()
         indicator = self.sli()
         avail_percentage = self.availability()
-        mt_bf = self.mtbf()
+        mt_bf = self.mtbf(up_time)
         mt_tr = self.mttr()
         
         list_results = [up_time,down_time,customer_sla,objective,indicator,avail_percentage,mt_bf,mt_tr]
