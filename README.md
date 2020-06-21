@@ -1,3 +1,4 @@
 # python
 
-SRE Metrics class
+SRE  - To calculate SRE metrics
+PasswordGenerator - Django 3 simple password generator
