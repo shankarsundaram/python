@@ -5,6 +5,7 @@ from django.db import models
 class Sre(models.Model):
     client_name = models.CharField(max_legth=100)
     description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='client/images')
     uptime = models.TimeField()
     downtime = models.TimeField()
     availability = models.FloatField()
